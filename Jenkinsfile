@@ -24,7 +24,6 @@ pipeline {
             url: 'http://3.86.254.63:8080')],
             contextPath: 'default',
             war: '**/*.war'
-        
            }
         }
         
