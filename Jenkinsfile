@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'cd SampleWebApp && mvn test'
+                sh 'mvn -f SampleWebApp/pom.xml test'
             }
         }
         stage('Build with Maven') {
