@@ -7,6 +7,13 @@ pipeline {
                 git 'https://github.com/jodada1/Myproject.git'
             }
         }
+        stage("SonarQube analysis 1") {
+            steps {
+                withSonarQubeEnv('mysonar') {
+                sh 'mvn -f SampleWebApp/pom.xml clean package sonar:sonar'
+              }
+           } 
+        }
         stage('Test') {
             steps {
                 sh 'cd SampleWebApp && mvn test'
